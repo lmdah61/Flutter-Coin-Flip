@@ -1,16 +1,5 @@
-# flutter_coin_flip
+# Flutter Coin FLip
 
-A new Flutter project.
 
-## Getting Started
+![coin_1](https://user-images.githubusercontent.com/123673560/217109657-be3e7655-be45-4262-9bd5-4a89c20acf1c.gif) ![coin_2](https://user-images.githubusercontent.com/123673560/217109662-667d1279-57c7-4b55-b2aa-9c70a0dccd80.gif)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
