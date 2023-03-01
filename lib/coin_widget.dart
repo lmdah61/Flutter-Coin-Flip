@@ -44,8 +44,8 @@ class _CoinWidgetState extends State<CoinWidget>
     int value = await _getRandomNumber();
     await controller.forward().whenComplete(() async {
       setState(() {
-        _disableTouch = false;
         _result = value == 0 ? 'Heads' : 'Tails';
+        _disableTouch = false;
       });
     });
   }
@@ -65,43 +65,40 @@ class _CoinWidgetState extends State<CoinWidget>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _flipCoin,
-      child: Center(
-        child: AnimatedBuilder(
-          animation: animation,
-          builder: (context, child) {
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.identity()
-                ..setEntry(3, 2, 0.001)
-                ..rotateX(4 * pi * animation.value),
-              child: child,
-            );
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.yellow,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  offset: Offset(2, 2),
-                  blurRadius: 4,
-                ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                _result,
-                style: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.black87,
+      child: AnimatedBuilder(
+        animation: animation,
+        builder: (context, child) {
+          return Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, 0.001)
+              ..rotateX(4 * pi * animation.value),
+            child: Container(
+              width: 200,
+              height: 200,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.yellow,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    offset: Offset(2, 2),
+                    blurRadius: 4,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  _result,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: Colors.black87,
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
